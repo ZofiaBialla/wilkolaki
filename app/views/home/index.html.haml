@@ -1,1 +1,5 @@
 = link_to 'Wal pokoik', new_room_path, class: 'btn btn-info'
+
+- rooms.each do |room|
+  %p
+    = link_to "Join #{room.name}", join_room_path(room), class: 'btn btn-link'

@@ -9,6 +9,8 @@ class Room
 	field :status, type: String
 	field :count, type: Integer
 
+	scope :ready, -> { where(status: 'ready') }
+
 	def ready?
 		self.status == 'ready'
 	end

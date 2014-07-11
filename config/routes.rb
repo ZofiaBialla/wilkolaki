@@ -5,5 +5,9 @@ Rails.application.routes.draw do
 
   root 'home#index'
 
-  resources :rooms
+  resources :rooms do
+    member do
+      get :join
+    end
+  end
 end

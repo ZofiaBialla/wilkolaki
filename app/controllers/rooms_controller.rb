@@ -18,6 +18,11 @@ class RoomsController < ApplicationController
   def show
   end
 
+  def join
+    Player.create(room_id: room.id, user_id: current_user.id)
+    redirect_to(room)
+  end
+
   private
 
   def room_params
