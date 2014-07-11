@@ -11,6 +11,8 @@ class Room
 
 	scope :ready, -> { where(status: 'ready') }
 
+	SEVEN_PLAYER_ROLE_MAP = ['werewolf', 'citizen', 'citizen', 'citizen', 'citizen', 'cupid', 'girl']
+
 	def ready?
 		self.status == 'ready'
 	end
@@ -34,6 +36,13 @@ class Room
 
   def check_fullness(count)
   	self.set_status!('full') if count >= 7
+  end
+
+  def assign_roles
+  	shuffled = SEVEN_PLAYER_ROLE_MAP.shuffle
+  	self.players.each_with_index do |player, index|
+  		player.set_role!(shuffled[index])
+  	end
   end
 
   
