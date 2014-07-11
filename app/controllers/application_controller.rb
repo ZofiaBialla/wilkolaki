@@ -1,7 +1,10 @@
 class ApplicationController < ActionController::Base
 	before_action :authenticate_user!
   protect_from_forgery with: :exception
-  before_action :authenticate_user!
+
+  decent_configuration do
+    strategy DecentExposure::StrongParametersStrategy
+  end
 
   
 end
