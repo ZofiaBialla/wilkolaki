@@ -10,6 +10,4 @@ class Player
 		self.dead
 	end
 
-	
-
 end

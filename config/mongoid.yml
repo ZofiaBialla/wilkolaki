@@ -4,4 +4,4 @@ development:
 			hosts:
 				-	localhost:27017
 			database: wilkolaki_dev
-			indentity_map_enabled: true
+			identity_map_enabled: true
