@@ -2,7 +2,7 @@ class User
   include Mongoid::Document
 
   has_many :rooms
-  has_one :player
+  has_many :players
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable and :omniauthable
   devise :database_authenticatable, :registerable,

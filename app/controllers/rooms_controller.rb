@@ -1,5 +1,6 @@
 class RoomsController < ApplicationController
   expose(:room, attributes: :room_params)
+  expose(:room_player) { player_for_room }
 
 
   def new
@@ -16,6 +17,7 @@ class RoomsController < ApplicationController
   end
 
   def show
+
   end
 
   def join
@@ -32,6 +34,10 @@ class RoomsController < ApplicationController
 
   def room_params
     params.require(:room).permit(:name, :status, :count)
+  end
+
+  def player_for_room
+    current_user.players.where(room_id: room.id).first
   end
 
 end
