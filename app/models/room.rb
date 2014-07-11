@@ -2,6 +2,9 @@ class Room
 	include Mongoid::Document
 	include Mongoid::Timestamps
 
+	has_many :players
+	belongs_to :user
+
 	field :name, type: String
 	field :status, type: String
 	field :count, type: Integer

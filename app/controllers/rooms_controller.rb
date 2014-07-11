@@ -6,6 +6,8 @@ class RoomsController < ApplicationController
   end
 
   def create
+    room.user_id = current_user.id
+    room.status = 'ready'
     if room.save
       redirect_to(room)
     else
