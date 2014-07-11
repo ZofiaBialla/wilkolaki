@@ -26,4 +26,15 @@ class Room
 	def set_status!(status)
 		self.update_attribute(:status, status)
   end
+
+  def can_join?
+  	check_fullness(self.players.count)
+  	!full?
+  end
+
+  def check_fullness(count)
+  	self.set_status!('full') if count >= 7
+  end
+
+  
 end

@@ -19,8 +19,13 @@ class RoomsController < ApplicationController
   end
 
   def join
-    Player.create(room_id: room.id, user_id: current_user.id)
-    redirect_to(room)
+    if room.can_join?
+      Player.create(room_id: room.id, user_id: current_user.id)
+      redirect_to(room)
+    else
+      flash[:alert] = "This room: #{room.name} is full"
+      redirect_to root_path
+    end
   end
 
   private
