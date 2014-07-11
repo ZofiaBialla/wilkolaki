@@ -53,6 +53,7 @@ GEM
       execjs
     coffee-script-source (1.7.1)
     connection_pool (2.0.0)
+    decent_exposure (2.3.1)
     devise (3.2.3)
       bcrypt-ruby (~> 3.0)
       orm_adapter (~> 0.1)
@@ -151,6 +152,7 @@ PLATFORMS
 DEPENDENCIES
   bootstrap-sass (~> 3.2.0)
   coffee-rails (~> 4.0.0)
+  decent_exposure
   devise
   haml
   jbuilder (~> 2.0)
