@@ -2,4 +2,5 @@
   YOU ARE IN ROOM
   = room.name
 
-%div{class: "#{room_player.role}"}
+- unless room.user.id == current_user.id
+  %div{class: "#{room_player.role}"}
